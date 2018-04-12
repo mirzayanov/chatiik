@@ -25,7 +25,9 @@ const run = async () => {
     //
     // console.log(channels)
 
-    // const updated = await pact.updateCompany(1621, {phone: "99999999"})
+    const res = await pact.updateCompany(comp, {
+        webhook_url: "http://13.59.247.154:3000/webhook"
+    })
     //
     // const companies = await pact.getCompanies()
     //
@@ -50,13 +52,13 @@ const run = async () => {
     //     message: "hello"
     // })
 
-    const res  = await pact.uploadAttachments(comp, conver, {
-        file: "https://pp.userapi.com/c831508/v831508085/d246a/jrp5LJ51Bxc.jpg"
-    })
+    // const res  = await pact.uploadAttachments(comp, conver, {
+    //     file: "https://pp.userapi.com/c831508/v831508085/d246a/jrp5LJ51Bxc.jpg"
+    // })
     console.log(res)
 
 }
 
-// run()
+run()
 
-app.listen(3000)
+// app.listen(3000)
