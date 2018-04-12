@@ -1,15 +1,19 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 
 const config = require('../config')
 
 const app = express()
 
+app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
     res.send("hello")
 })
-app.post('/webhook', (req, res) => {
 
+app.post('/webhook', (req, res) => {
+    console.log(req.body)
+    res.send(200)
 })
 
 const pact = new (require('./libs/pact'))(config.get('pact:token'))
@@ -25,9 +29,9 @@ const run = async () => {
     //
     // console.log(channels)
 
-    const res = await pact.updateCompany(comp, {
-        webhook_url: "http://13.59.247.154:3000/webhook"
-    })
+    // const res = await pact.updateCompany(comp, {
+    //     webhook_url: "http://13.59.247.154:3000/webhook"
+    // })
     //
     // const companies = await pact.getCompanies()
     //
@@ -59,6 +63,6 @@ const run = async () => {
 
 }
 
-run()
+// run()
 
-// app.listen(3000)
+app.listen(3000)
