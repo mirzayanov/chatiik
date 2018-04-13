@@ -145,6 +145,22 @@ class Pact {
         else return null
     }
 
+    //need test
+    async sendMessageToWA(companyId, channelId, qs) {
+
+        const options = {
+            method: "POST",
+            url: this.url + `/${companyId}/channels/${channelId}/conversations`,
+            headers: this.headers,
+            qs: qs
+        }
+
+        const res = await this.makeRequest(options)
+
+        if(res && res.data ) return res.data
+        else return null
+    }
+
 
     //CONVERSATIONS
 
@@ -240,6 +256,21 @@ class Pact {
         else return null
     }
 
+
+    // JOBS
+
+    //need test
+    async getJobDetails(companyId, channelId, jobId) {
+        const options = {
+            url: this.url + `/${companyId}/channels/${channelId}/jobs/${jobId}`,
+            headers: this.headers
+        }
+
+        const res = await this.makeRequest(options)
+
+        if(res && res.data ) return res.data
+        else return null
+    }
 
 }
 
