@@ -30,7 +30,7 @@ app.post('/webhook/nodebottest', async (req, res) => {
 
         console.log(response)
 
-        if(!response) {
+        if(response) {
             pact.sendMessage(comp, converId, {
                 message: response
             })
