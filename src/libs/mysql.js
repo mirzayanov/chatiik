@@ -16,7 +16,8 @@ exports.getResponse = async (userId, message) => {
     try {
         const res = await mysql.query(sql)
         console.log(res)
-        return "some text"
+        if(res.length == 0) return null
+        return res[0].response
     } catch (e) {
         console.error(e)
         throw e
