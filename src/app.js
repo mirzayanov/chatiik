@@ -8,6 +8,8 @@ const mysql = require('./libs/mysql')
 const app = express()
 mysql.init()
 
+
+
 app.use(bodyParser.json())
 
 //constants for test
@@ -24,11 +26,13 @@ app.post('/webhook/nodebottest', (req, res) => {
         const converId = req.body.data.conversation_id
         const message = req.body.data.message
 
-        
+        const response = mysql.getResponse(5, message)
 
-        pact.sendMessage(comp, converId, {
-            message: "some text"
-        })
+        if(!response) {
+            pact.sendMessage(comp, converId, {
+                message: response
+            })
+        }
 
     }
 

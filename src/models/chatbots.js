@@ -1,4 +1,4 @@
-const mysql = require("../libs/mysql").connection
+let mysql = require("../libs/mysql").connection
 
 module.exports.getResponse = async (userId, message) => {
     const sql = `SELECT response from chatbots where keyword="${message}" and user_id=${userId};`
