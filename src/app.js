@@ -39,7 +39,7 @@ app.post('/webhook/nodebottest', (req, res) => {
 //     // const res = await pact.getCompanies();
 //
 //     const res = await pact.updateCompany(comp, {
-//         webhook_url: "http://chatiik.com:3000/webhook/nodebottest"
+//         webhook_url: "http://chatiik.com:1337/webhook/nodebottest"
 //     })
 //
 //     console.log(res)
@@ -47,4 +47,4 @@ app.post('/webhook/nodebottest', (req, res) => {
 // }
 // run()
 
-app.listen(3000)
+app.listen(1337)
