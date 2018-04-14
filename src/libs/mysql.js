@@ -5,6 +5,5 @@ const config = require('../../config')
 module.exports.connection = null
 
 module.exports.init = async function() {
-    // conn = await mysql.createConnection(config.get('mysql'))
-    this.connection = {podi: "ldsfj"}
+    this.connection = await mysql.createConnection(config.get('mysql'))
 }
