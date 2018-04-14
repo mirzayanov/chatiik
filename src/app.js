@@ -19,14 +19,14 @@ const conver = 696107
 
 
 
-app.post('/webhook/nodebottest', (req, res) => {
+app.post('/webhook/nodebottest', async (req, res) => {
     console.log(req.body)
 
     if(req.body && req.body.type == "message" && req.body.data.income) {
         const converId = req.body.data.conversation_id
         const message = req.body.data.message
 
-        const response = mysql.getResponse(5, message)
+        const response = await mysql.getResponse(5, message)
 
         if(!response) {
             pact.sendMessage(comp, converId, {
