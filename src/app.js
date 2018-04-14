@@ -28,6 +28,8 @@ app.post('/webhook/nodebottest', async (req, res) => {
 
         const response = await mysql.getResponse(5, message)
 
+        console.log(response)
+
         if(!response) {
             pact.sendMessage(comp, converId, {
                 message: response
