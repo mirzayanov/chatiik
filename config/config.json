@@ -4,7 +4,7 @@
   },
 
   "mysql": {
-    "host": "194.58.90.60",
+    "host": "localhost",
     "user": "root",
     "password": "QctgV_Ft8Ea",
     "database": "realbots"

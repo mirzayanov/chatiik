@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/app.js",
-    "babel": "babel ./src/app.js --presets es2017"
+    "babel": "./node_modules/.bin/babel-node ./src/app.js"
   },
   "author": "rrrainy",
   "license": "ISC",
