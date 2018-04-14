@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/app.js",
-    "babel": "babel-node ./src/app.js"
+    "babel": "babel ./src/app.js --presets es2017"
   },
   "author": "rrrainy",
   "license": "ISC",
@@ -17,5 +17,9 @@
     "promise-mysql": "^3.2.1",
     "request": "^2.85.0",
     "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2017": "^6.24.1"
   }
 }
